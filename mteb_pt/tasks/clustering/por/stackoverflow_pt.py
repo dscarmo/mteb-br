@@ -4,7 +4,7 @@ Question titles from pt.stackoverflow.com (fetched via the Stack Exchange API),
 labelled by their technology tag (python, java, php, javascript, android, mysql,
 c#, html, css, c). Native PT-BR technical Q&A — the Programming domain, absent
 from the rest of the suite. Content is CC-BY-SA-4.0 (Stack Exchange). Built as
-mteb-pt/stackoverflow-clustering.
+MTEB-BR/stackoverflow-clustering.
 """
 
 from __future__ import annotations
@@ -12,7 +12,7 @@ from __future__ import annotations
 from mteb import TaskMetadata
 from mteb.abstasks import AbsTaskClustering
 
-_REPO = "mteb-pt/stackoverflow-clustering"
+_REPO = "MTEB-BR/stackoverflow-clustering"
 _REVISION = "baea103af775d126bedd7e51e350c6e193557d0e"
 
 

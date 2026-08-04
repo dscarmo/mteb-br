@@ -11,7 +11,7 @@ daemon thread syncs new results every ~HF_SYNC_SECONDS, only-missing skips done 
 Env:
   VERCEL_AI_GATEWAY_KEY                      gateway key
   VERCEL_MODEL_IDS  "voyage/voyage-4-lite,voyage/voyage-4,..."   comma-list
-  HF_RESULTS_REPO   (default mteb-pt/mteb-pt-results)
+  HF_RESULTS_REPO   (default MTEB-BR/mteb-pt-results)
   MTEB_CACHE        (default ~/.cache/mteb)
   HF_SYNC_SECONDS   (default 90)
   VERCEL_BATCH_SIZE (default 64)
@@ -35,7 +35,7 @@ from mteb.models.abs_encoder import AbsEncoder
 from huggingface_hub import HfApi, snapshot_download
 from openai import OpenAI
 
-REPO = os.environ.get("HF_RESULTS_REPO", "mteb-pt/mteb-pt-results")
+REPO = os.environ.get("HF_RESULTS_REPO", "MTEB-BR/mteb-pt-results")
 CACHE = os.environ.get("MTEB_CACHE", os.path.expanduser("~/.cache/mteb"))
 RESULTS = os.path.join(CACHE, "results")
 SYNC_EVERY = int(os.environ.get("HF_SYNC_SECONDS", "90"))

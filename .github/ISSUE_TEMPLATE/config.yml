@@ -1,7 +1,7 @@
 blank_issues_enabled: true
 contact_links:
   - name: 💬 Discuss on the Leaderboard Space
-    url: https://huggingface.co/spaces/mteb-pt/leaderboard/discussions
+    url: https://huggingface.co/spaces/MTEB-BR/leaderboard/discussions
     about: Model submissions and questions also work via HF Discussions on the Space.
   - name: 📧 Direct contact
     url: mailto:stekel@ifsp.edu.br

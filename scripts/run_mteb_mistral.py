@@ -22,7 +22,7 @@ Env:
   MISTRAL_MODEL        default: mistral-embed  (aliases mistral-embed-2312 → same)
   MISTRAL_RPM          default: 55   (5-RPM safety margin under the 60 limit)
   MISTRAL_BATCH_SIZE   default: 128  (texts per API call)
-  HF_RESULTS_REPO      default: mteb-pt/mteb-pt-results
+  HF_RESULTS_REPO      default: MTEB-BR/mteb-pt-results
   MTEB_CACHE           default: ~/.cache/mteb
   HF_SYNC_SECONDS      default: 120
   HF_TOKEN             optional (needed to push results)
@@ -51,7 +51,7 @@ from mteb.models.model_meta import ModelMeta, ScoringFunction
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-REPO = os.environ.get("HF_RESULTS_REPO", "mteb-pt/mteb-pt-results")
+REPO = os.environ.get("HF_RESULTS_REPO", "MTEB-BR/mteb-pt-results")
 CACHE = os.environ.get("MTEB_CACHE", os.path.expanduser("~/.cache/mteb"))
 RESULTS = os.path.join(CACHE, "results")
 SYNC_EVERY = int(os.environ.get("HF_SYNC_SECONDS", "120"))

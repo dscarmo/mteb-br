@@ -8,7 +8,7 @@ resumable across spot preemptions, with results persisted on a Shared Filesystem
 - **Upload (CPU):** `CPU.4V.16G` spot — cheap, used only after the run to push results to HF.
 - **Storage:** one **Shared Filesystem (SFS), 50 GB** (multi-attach, so it can be reused by both instances and by parallel GPU instances later). Mounts survive spot preemption (`on_spot_discontinue=keep_detached` is the default).
 
-`HF_TOKEN` must have: (1) **Gemma license accepted** (for embeddinggemma), (2) **PortuLex gated access** (for `rrip`), (3) **write** to `mteb-pt/mteb-pt-results` (for the upload).
+`HF_TOKEN` must have: (1) **Gemma license accepted** (for embeddinggemma), (2) **PortuLex gated access** (for `rrip`), (3) **write** to `MTEB-BR/mteb-pt-results` (for the upload).
 
 ---
 
@@ -26,15 +26,15 @@ export MTEB_BATCH_SIZE=256          # L40S 48GB; for 8B models later drop to ~32
 mkdir -p "$HF_HOME" "$MTEB_CACHE"
 
 # --- code (the 22-task MTEB(por) suite) ---
-git clone https://github.com/tardellirs/mteb-pt.git
-cd mteb-pt
+git clone https://github.com/tardellirs/mteb-br.git
+cd mteb-br
 pip install -e .          # pyproject pins datasets>=3, sentence-transformers>=5, transformers>=4.57 (Gemma3-ready)
 
 # --- run embeddinggemma on all 22 tasks ---
 python scripts/run_mteb_por_v2.py google/embeddinggemma-300m
 ```
 
-**Resume after a spot kill:** re-provision, re-mount the SFS, `cd mteb-pt`, re-run the **same** command. Finished `(model, task)` pairs are skipped; nothing re-downloads (cache is on the SFS).
+**Resume after a spot kill:** re-provision, re-mount the SFS, `cd mteb-br`, re-run the **same** command. Finished `(model, task)` pairs are skipped; nothing re-downloads (cache is on the SFS).
 
 **More models later:** same command, list them — `python scripts/run_mteb_por_v2.py model-a model-b ...`. API models (Gemini/OpenAI) are evaluated separately (no GPU).
 
@@ -48,10 +48,10 @@ Attach the **same SFS**, then:
 export SFS=/mnt/sfs
 export MTEB_CACHE=$SFS/mteb_cache
 export HF_TOKEN=hf_xxx
-git clone https://github.com/tardellirs/mteb-pt.git && cd mteb-pt && pip install -e .
+git clone https://github.com/tardellirs/mteb-br.git && cd mteb-br && pip install -e .
 
 python scripts/upload_results_to_hf.py --dry-run    # list what would upload
-python scripts/upload_results_to_hf.py              # -> mteb-pt/mteb-pt-results (one batched commit, no 429s)
+python scripts/upload_results_to_hf.py              # -> MTEB-BR/mteb-pt-results (one batched commit, no 429s)
 ```
 
 Never upload during the GPU run — it wastes GPU time. Results live on the SFS until this step.

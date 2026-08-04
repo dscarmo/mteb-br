@@ -27,7 +27,7 @@ Env vars:
   VOYAGE_RERANK_MODEL   rerank-2.5 (default) | rerank-2.5-lite
   VOYAGE_RPM            requests per minute cap (default 900)
   HF_TOKEN              HuggingFace token for result upload
-  HF_RESULTS_REPO       dataset repo for results (default mteb-pt/mteb-pt-results)
+  HF_RESULTS_REPO       dataset repo for results (default MTEB-BR/mteb-pt-results)
   MTEB_CACHE            local cache dir (default ~/.cache/mteb)
   HF_SYNC_SECONDS       upload interval in seconds (default 120)
   MTEB_TASKS            comma-list to restrict tasks (e.g. QuatiReranking)
@@ -62,7 +62,7 @@ if TYPE_CHECKING:
 # ---------------------------------------------------------------------------
 # Configuration from environment
 # ---------------------------------------------------------------------------
-REPO = os.environ.get("HF_RESULTS_REPO", "mteb-pt/mteb-pt-results")
+REPO = os.environ.get("HF_RESULTS_REPO", "MTEB-BR/mteb-pt-results")
 CACHE = os.environ.get("MTEB_CACHE", os.path.expanduser("~/.cache/mteb"))
 RESULTS = os.path.join(CACHE, "results")
 SYNC_EVERY = int(os.environ.get("HF_SYNC_SECONDS", "120"))

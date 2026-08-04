@@ -49,12 +49,12 @@ viz = [
 ]
 
 [project.urls]
-Homepage = "https://huggingface.co/spaces/mteb-pt/leaderboard"
-Repository = "https://github.com/tardellirs/mteb-pt"
-Documentation = "https://github.com/tardellirs/mteb-pt#readme"
-"Bug Tracker" = "https://github.com/tardellirs/mteb-pt/issues"
-Dataset = "https://huggingface.co/datasets/mteb-pt/mteb-pt-results"
-Organization = "https://huggingface.co/mteb-pt"
+Homepage = "https://huggingface.co/spaces/MTEB-BR/leaderboard"
+Repository = "https://github.com/tardellirs/mteb-br"
+Documentation = "https://github.com/tardellirs/mteb-br#readme"
+"Bug Tracker" = "https://github.com/tardellirs/mteb-br/issues"
+Dataset = "https://huggingface.co/datasets/MTEB-BR/mteb-pt-results"
+Organization = "https://huggingface.co/MTEB-BR"
 
 [tool.setuptools.packages.find]
 where = ["."]

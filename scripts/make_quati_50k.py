@@ -29,7 +29,7 @@ from huggingface_hub import HfApi
 
 SRC = "tardellirs/mteb-pt-quati-250k"
 SRC_REV = "7440d16aa3a53c037e63a16591c461210b72dd82"
-DST = "mteb-pt/quati-50k"
+DST = "MTEB-BR/quati-50k"
 TARGET = 50_000
 SEED = 42
 

@@ -20,7 +20,7 @@ minutes of each model. (mteb's only-missing is task-atomic -- it cannot resume
 *within* a task, so a mid-Quati preemption re-encodes; heavy-first bounds that.)
 
 Env:
-  HF_RESULTS_REPO  (default mteb-pt/mteb-pt-results)  results dataset repo
+  HF_RESULTS_REPO  (default MTEB-BR/mteb-pt-results)  results dataset repo
   MTEB_CACHE       (default ~/.cache/mteb)            results cache root
   HF_SYNC_SECONDS  (default 60)                       sync cadence
   HF_TOKEN                                            write access to the repo
@@ -61,7 +61,7 @@ import mteb_pt
 import mteb_pt.register as register
 from huggingface_hub import HfApi, snapshot_download
 
-REPO = os.environ.get("HF_RESULTS_REPO", "mteb-pt/mteb-pt-results")
+REPO = os.environ.get("HF_RESULTS_REPO", "MTEB-BR/mteb-pt-results")
 CACHE = os.environ.get("MTEB_CACHE", os.path.expanduser("~/.cache/mteb"))
 RESULTS = os.path.join(CACHE, "results")
 SYNC_EVERY = int(os.environ.get("HF_SYNC_SECONDS", "60"))

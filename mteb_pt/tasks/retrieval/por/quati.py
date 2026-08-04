@@ -13,7 +13,7 @@ accepted MTEB practice for very large corpora. Even at 50k Quati is ~78% of the
 per-model encoding load (it was ~95% at 250k / ~99% at the full 1M pool); the cut
 makes the suite ~4x cheaper to run and re-run while keeping a large, hard,
 well-discriminating corpus (all gold preserved). Repackaged + pinned at
-mteb-pt/quati-50k (corpus / queries / qrels configs).
+MTEB-BR/quati-50k (corpus / queries / qrels configs).
 """
 
 from __future__ import annotations
@@ -23,7 +23,7 @@ from typing import Any
 from mteb import TaskMetadata
 from mteb.abstasks import AbsTaskRetrieval
 
-_REPO = "mteb-pt/quati-50k"
+_REPO = "MTEB-BR/quati-50k"
 _REVISION = "5cb87d9561d8ace807305f50e59a4b0af352da2e"
 
 

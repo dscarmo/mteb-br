@@ -12,7 +12,7 @@ Usage::
     export MTEB_CACHE=/mnt/vol/mteb_cache        # the same volume the GPU run used
     python scripts/upload_results_to_hf.py                 # upload
     python scripts/upload_results_to_hf.py --dry-run       # list only
-    python scripts/upload_results_to_hf.py --repo mteb-pt/mteb-pt-results
+    python scripts/upload_results_to_hf.py --repo MTEB-BR/mteb-pt-results
 
 Uses ``upload_folder`` (a single batched commit) to avoid the per-file 429
 rate-limits seen with many parallel uploads.
@@ -31,7 +31,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Batch-upload the mteb results cache to the HF results dataset.",
     )
-    parser.add_argument("--repo", default="mteb-pt/mteb-pt-results", help="Target HF dataset repo")
+    parser.add_argument("--repo", default="MTEB-BR/mteb-pt-results", help="Target HF dataset repo")
     parser.add_argument(
         "--cache",
         default=os.environ.get("MTEB_CACHE", str(Path.home() / ".cache" / "mteb")),

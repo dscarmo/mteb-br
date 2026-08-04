@@ -37,7 +37,7 @@ from mteb.models.abs_encoder import AbsEncoder
 from huggingface_hub import HfApi, snapshot_download
 import voyageai
 
-REPO = os.environ.get("HF_RESULTS_REPO", "mteb-pt/mteb-pt-results")
+REPO = os.environ.get("HF_RESULTS_REPO", "MTEB-BR/mteb-pt-results")
 CACHE = os.environ.get("MTEB_CACHE", os.path.expanduser("~/.cache/mteb"))
 RESULTS = os.path.join(CACHE, "results")
 SYNC_EVERY = int(os.environ.get("HF_SYNC_SECONDS", "120"))

@@ -23,10 +23,10 @@ See ``examples/`` for paired-bootstrap significance testing and headline ranking
 Resources
 ---------
 
-- Live leaderboard:  https://huggingface.co/spaces/mteb-pt/leaderboard
-- Results dataset:   https://huggingface.co/datasets/mteb-pt/mteb-pt-results
-- Organization:      https://huggingface.co/mteb-pt
-- Source code:       https://github.com/tardellirs/mteb-pt
+- Live leaderboard:  https://huggingface.co/spaces/MTEB-BR/leaderboard
+- Results dataset:   https://huggingface.co/datasets/MTEB-BR/mteb-pt-results
+- Organization:      https://huggingface.co/MTEB-BR
+- Source code:       https://github.com/tardellirs/mteb-br
 """
 
 from __future__ import annotations
