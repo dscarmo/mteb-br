@@ -61,6 +61,14 @@ python examples/compute_bootstrap_ci.py \
     --results-b ./results/Qwen__Qwen3-Embedding-8B
 ```
 
+### Visualize local results
+
+Open the Streamlit dashboard against whatever is already under `$MTEB_CACHE/results` (new model runs appear automatically; `MTEB_CACHE` is read from the environment):
+
+```bash
+streamlit run scripts/visualize_results.py
+```
+
 ## Package layout
 
 ```
@@ -80,7 +88,8 @@ mteb_pt/
     └── reranking/por/                # QuatiReranking, JurisTCUReranking
 
 scripts/
-└── run_mteb_por_v2.py                # full 22-task suite, resumable (spot/block-volume aware)
+├── run_mteb_por_v2.py                # full 22-task suite, resumable (spot/block-volume aware)
+└── visualize_results.py              # Streamlit dashboard for $MTEB_CACHE/results
 
 examples/
 ├── quickstart.py                     # 1 model × 1 task smoke test
